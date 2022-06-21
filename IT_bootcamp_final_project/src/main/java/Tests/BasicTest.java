@@ -2,9 +2,13 @@ package Tests;
 
 
 import Pages.LoginPage;
+import Pages.MessagePopUpPage;
 import Pages.NavPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -19,6 +23,9 @@ public abstract class BasicTest {
     protected LoginPage loginPage;
     protected NavPage navPage;
 
+    protected MessagePopUpPage messagePopUpPage;
+    protected WebDriverWait wait;
+
 
     @BeforeClass
     public void beforeClass () {
@@ -27,9 +34,13 @@ public abstract class BasicTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
 
         loginPage = new LoginPage(driver);
         navPage = new NavPage(driver);
+        messagePopUpPage = new MessagePopUpPage(driver);
+
 
     }
 

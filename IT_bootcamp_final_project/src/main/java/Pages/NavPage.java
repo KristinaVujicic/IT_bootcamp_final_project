@@ -26,6 +26,10 @@ public class NavPage {
         return driver.findElement(By.xpath("// div [contains (@id, 'list-item-73')]"));
     }
 
+    public WebElement getLogOutButton () {
+        return driver.findElement(By.xpath("// button [contains (@class, 'btnLogout')]"));
+    }
+
 
 
 }

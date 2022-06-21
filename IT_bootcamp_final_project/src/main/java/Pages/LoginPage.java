@@ -20,14 +20,10 @@ public class LoginPage {
         return driver.findElement(By.id("password"));
     }
 
-//    public WebElement getLogin () {
-//        return driver.findElement(By.xpath());
-//    }
-
-    public WebElement getLoginButtonAfterAddingCredentials(){
-        return driver.findElement(By
-                .xpath("//div[contains(@class, 'layout ')]/div[3]/button"));
+    public WebElement getLogInButtonOnLogInPage () {
+        return driver.findElement(By.xpath("// button [contains (@type, 'submit')]"));
     }
+
 
 
 
