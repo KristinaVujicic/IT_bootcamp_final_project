@@ -30,6 +30,11 @@ public class NavPage {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnLogout')]"));
     }
 
+    public WebElement getSignUpButton () {
+        return driver.findElement(By
+                .xpath("// a [@href= '/signup']"));
+    }
+
 
 
 }
