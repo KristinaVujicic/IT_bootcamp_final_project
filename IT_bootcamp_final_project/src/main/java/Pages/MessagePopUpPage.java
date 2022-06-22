@@ -44,4 +44,15 @@ public class MessagePopUpPage {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnClose ')]"));
     }
 
+    public void waitForPopUpDeleteCityToBeVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .xpath("//div[contains(@class, 'v-snack')]/div[contains(@class, 'success')]")));
+
+    }
+
+    public WebElement getElementsWithVisibleMessagesForCities(){
+        return driver.findElement(By.xpath("//div[contains(@class, 'v-snack')]/div[contains(@class, 'success')]"));
+    }
+
 }
