@@ -4,6 +4,8 @@ package Tests;
 import Pages.LoginPage;
 import Pages.MessagePopUpPage;
 import Pages.NavPage;
+import Pages.SignUpPage;
+import Pages.CitiesPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
@@ -24,6 +26,11 @@ public abstract class BasicTest {
     protected NavPage navPage;
 
     protected MessagePopUpPage messagePopUpPage;
+
+    protected SignUpPage signUpPage;
+
+    protected CitiesPage citiesPage;
+
     protected WebDriverWait wait;
 
 
@@ -40,6 +47,10 @@ public abstract class BasicTest {
         loginPage = new LoginPage(driver);
         navPage = new NavPage(driver);
         messagePopUpPage = new MessagePopUpPage(driver);
+        signUpPage = new SignUpPage(driver);
+        citiesPage = new CitiesPage(driver);
+
+
 
 
     }
