@@ -35,6 +35,39 @@ public class NavPage {
                 .xpath("// a [@href= '/signup']"));
     }
 
+    public WebElement getAdminButton () {
+        return driver.findElement(By.xpath("// button [contains (@class, 'btnAdmin')]"));
+
+    }
+
+    public WebElement getCityButton () {
+        return driver.findElement(By.xpath("// a [contains (@class, 'btnAdminCities')]"));
+    }
+
+    public WebElement getUsersButton () {
+        return driver.findElement(By.xpath("// a [contains (@class, 'btnAdminUsers')]"));
+    }
+
+    public WebElement getLanguageButton(){
+        return this.driver.findElement(By.xpath("//button[contains(@class, 'btnLocaleActivation')]"));
+    }
+
+    public WebElement getLanguageESButton(){
+        return this.driver.findElement(By.xpath("//div[contains(@class, 'btnES')]"));
+    }
+    public WebElement getLanguageFRButton(){
+        return this.driver.findElement(By.xpath("//div[contains(@class, 'btnFR')]"));
+    }
+    public WebElement getLanguageCNButton(){
+        return this.driver.findElement(By.xpath("//div[contains(@class, 'btnCN')]"));
+    }
+
+    public WebElement getHeader () {
+        return driver.findElement(By.tagName("h1"));
+    }
+
+
+
 
 
 }
