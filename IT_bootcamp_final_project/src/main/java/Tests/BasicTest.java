@@ -8,6 +8,8 @@ import Pages.SignUpPage;
 import Pages.CitiesPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +23,7 @@ import java.time.Duration;
 public abstract class BasicTest {
 
     protected WebDriver driver;
-    protected String baseUrl = "https://vue-demo.daniel-avellaneda.com/";
+    protected String baseUrl = "https://vue-demo.daniel-avellaneda.com";
     protected LoginPage loginPage;
     protected NavPage navPage;
 
@@ -31,7 +33,10 @@ public abstract class BasicTest {
 
     protected CitiesPage citiesPage;
 
+
     protected WebDriverWait wait;
+
+
 
 
     @BeforeClass
