@@ -66,6 +66,11 @@ public class NavPage {
         return driver.findElement(By.tagName("h1"));
     }
 
+    public WebElement getHomeButton  () {
+        return driver.findElement(By
+                .xpath("//a [@class= 'v-btn--active v-btn v-btn--flat v-btn--router v-btn--text theme--light v-size--default hidden-sm-and-down']"));
+    }
+
 
 
 
