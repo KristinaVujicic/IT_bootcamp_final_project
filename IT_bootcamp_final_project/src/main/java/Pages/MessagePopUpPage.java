@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 
@@ -40,7 +41,7 @@ public class MessagePopUpPage {
                 .xpath("// div [contains (@class, 'dlgVerifyAccount')]"));
     }
 
-    public WebElement getCloseImportantButton () {
+    public WebElement getCloseImportantButton() {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnClose ')]"));
     }
 
@@ -51,7 +52,7 @@ public class MessagePopUpPage {
 
     }
 
-    public WebElement getElementsWithVisibleMessagesForCities(){
+    public WebElement getElementsWithVisibleMessagesForCities() {
         return driver.findElement(By.xpath("//div[contains(@class, 'v-snack')]/div[contains(@class, 'success')]"));
     }
 

@@ -3,7 +3,6 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 public class NavPage {
 
@@ -13,66 +12,66 @@ public class NavPage {
         this.driver = driver;
     }
 
-    public WebElement getLoginButton () {
+    public WebElement getLoginButton() {
         return driver.findElement(By.xpath("// a [contains (@class, 'btnLogin')]"));
     }
 
-    public WebElement getChangeLanguageButton(){
+    public WebElement getChangeLanguageButton() {
         return driver.findElement(By
                 .xpath("// button [contains (@class, 'btnLocaleActivation v-btn v-btn--flat v-btn--text theme--light v-size--default')]"));
 
     }
-    public WebElement getENGButtonFromDropdown(){
+
+    public WebElement getENGButtonFromDropdown() {
         return driver.findElement(By.xpath("// div [contains (@id, 'list-item-73')]"));
     }
 
-    public WebElement getLogOutButton () {
+    public WebElement getLogOutButton() {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnLogout')]"));
     }
 
-    public WebElement getSignUpButton () {
+    public WebElement getSignUpButton() {
         return driver.findElement(By
                 .xpath("// a [@href= '/signup']"));
     }
 
-    public WebElement getAdminButton () {
+    public WebElement getAdminButton() {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnAdmin')]"));
 
     }
 
-    public WebElement getCityButton () {
+    public WebElement getCityButton() {
         return driver.findElement(By.xpath("// a [contains (@class, 'btnAdminCities')]"));
     }
 
-    public WebElement getUsersButton () {
+    public WebElement getUsersButton() {
         return driver.findElement(By.xpath("// a [contains (@class, 'btnAdminUsers')]"));
     }
 
-    public WebElement getLanguageButton(){
+    public WebElement getLanguageButton() {
         return this.driver.findElement(By.xpath("//button[contains(@class, 'btnLocaleActivation')]"));
     }
 
-    public WebElement getLanguageESButton(){
+    public WebElement getLanguageESButton() {
         return this.driver.findElement(By.xpath("//div[contains(@class, 'btnES')]"));
     }
-    public WebElement getLanguageFRButton(){
+
+    public WebElement getLanguageFRButton() {
         return this.driver.findElement(By.xpath("//div[contains(@class, 'btnFR')]"));
     }
-    public WebElement getLanguageCNButton(){
+
+    public WebElement getLanguageCNButton() {
         return this.driver.findElement(By.xpath("//div[contains(@class, 'btnCN')]"));
     }
 
-    public WebElement getHeader () {
+    public WebElement getHeader() {
         return driver.findElement(By.tagName("h1"));
     }
 
-    public WebElement getHomeButton  () {
+    public WebElement getHomeButton() {
         return driver.findElement(By
                 .xpath("//a [@class= 'v-btn--active v-btn v-btn--flat v-btn--router v-btn--text theme--light v-size--default hidden-sm-and-down']"));
     }
-
-
-
 
 
 }

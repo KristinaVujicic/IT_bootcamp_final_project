@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 public class AdminCitiesTests extends BasicTest {
 
 
-    @Test (priority = 1)
-    public void visitsTheAdminCitiesPageAndListCities () throws InterruptedException {
+    @Test(priority = 1)
+    public void visitsTheAdminCitiesPageAndListCities() {
 
         navPage.getLoginButton().click();
         loginPage.getEmail().click();
@@ -21,7 +21,6 @@ public class AdminCitiesTests extends BasicTest {
         loginPage.getLogInButtonOnLogInPage().click();
 
         navPage.getAdminButton().click();
-        Thread.sleep(1000);
 
         navPage.getCityButton().click();
 
@@ -30,8 +29,8 @@ public class AdminCitiesTests extends BasicTest {
 
     }
 
-    @Test (priority = 2 )
-    public void checksInputTypesForCreateOrEditNewCity ()  {
+    @Test(priority = 2)
+    public void checksInputTypesForCreateOrEditNewCity() {
 
 
         navPage.getAdminButton().click();
@@ -48,8 +47,8 @@ public class AdminCitiesTests extends BasicTest {
 
     }
 
-    @Test (priority = 3)
-    public void createNewCity () {
+    @Test(priority = 3)
+    public void createNewCity() {
 
         navPage.getAdminButton().click();
         navPage.getCityButton().click();
@@ -66,8 +65,8 @@ public class AdminCitiesTests extends BasicTest {
 
     }
 
-    @Test (priority = 4)
-    public void editCity () {
+    @Test(priority = 4)
+    public void editCity() {
 
         navPage.getAdminButton().click();
         navPage.getCityButton().click();
@@ -88,28 +87,27 @@ public class AdminCitiesTests extends BasicTest {
         citiesPage.getSaveButton().click();
 
 
-
         citiesPage.waitForSuccessPopUpToBeVisible();
         Assert.assertTrue(citiesPage.getMessageTextFromSuccesPopUp().getText().contains("Saved successfully"),
-                "[ERROR] The message from pop-up should be 'Saved successfully'" );
+                "[ERROR] The message from pop-up should be 'Saved successfully'");
 
     }
 
-    @Test (priority = 5)
-    public void searchCity () {
+    @Test(priority = 5)
+    public void searchCity() {
 
         navPage.getAdminButton().click();
         navPage.getCityButton().click();
         citiesPage.getSearchInout().sendKeys("VujKris's");
         citiesPage.waitForNumbersOfRowsToBe(1);
 
-        Assert.assertTrue(citiesPage.getTableCellFromRow(1,2).getText().contains("VujKris's"),
+        Assert.assertTrue(citiesPage.getTableCellFromRow(1, 2).getText().contains("VujKris's"),
                 "[ERROR] The 'Name' column does not contain expected result");
 
     }
 
-    @Test (priority = 6)
-    public void deleteCity () {
+    @Test(priority = 6)
+    public void deleteCity() {
 
         navPage.getAdminButton().click();
         navPage.getCityButton().click();
@@ -128,14 +126,6 @@ public class AdminCitiesTests extends BasicTest {
         Assert.assertTrue(messagePopUpPage.getElementsWithVisibleMessagesForCities().getText().contains("Deleted"),
                 "[ERROR] City is not deleted");
     }
-
-
-
-
-
-
-
-
 
 
 }

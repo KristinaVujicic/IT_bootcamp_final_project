@@ -3,10 +3,10 @@ package Tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignupTests extends BasicTest{
+public class SignupTests extends BasicTest {
 
-    @Test (priority = 1)
-    public void visitsTheSignupPage () throws InterruptedException {
+    @Test(priority = 1)
+    public void visitsTheSignupPage() {
 
         navPage.getSignUpButton().click();
 
@@ -15,8 +15,8 @@ public class SignupTests extends BasicTest{
 
     }
 
-    @Test (priority = 2)
-    public void checksInputTypes (){
+    @Test(priority = 2)
+    public void checksInputTypes() {
 
         navPage.getSignUpButton().click();
         Assert.assertEquals(signUpPage.getEmailInput().getAttribute("type"), ("email"),
@@ -30,8 +30,8 @@ public class SignupTests extends BasicTest{
 
     }
 
-    @Test
-    public void  displaysErrorsWhenUserAlreadyExists () {
+    @Test(priority = 3)
+    public void displaysErrorsWhenUserAlreadyExists() {
 
         navPage.getSignUpButton().click();
 
@@ -56,8 +56,8 @@ public class SignupTests extends BasicTest{
 
     }
 
-    @Test (priority = 4)
-    public void signup () throws InterruptedException {
+    @Test(priority = 4)
+    public void signup() {
 
         navPage.getSignUpButton().click();
 
@@ -70,8 +70,6 @@ public class SignupTests extends BasicTest{
         signUpPage.getConfirmPassword().sendKeys("12345");
 
         signUpPage.getSignUpButton().click();
-
-        Thread.sleep(2000);
 
         messagePopUpPage.waitForImportantPopUpToBeVisible();
 

@@ -37,16 +37,14 @@ public abstract class BasicTest {
     protected WebDriverWait wait;
 
 
-
-
     @BeforeClass
-    public void beforeClass () {
+    public void beforeClass() {
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 
         loginPage = new LoginPage(driver);
@@ -55,13 +53,10 @@ public abstract class BasicTest {
         signUpPage = new SignUpPage(driver);
         citiesPage = new CitiesPage(driver);
 
-
-
-
     }
 
     @BeforeMethod
-    public void beforeMethod () {
+    public void beforeMethod() {
         driver.get(baseUrl);
         driver.manage().window().maximize();
     }

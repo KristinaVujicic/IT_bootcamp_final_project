@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class AuthRoutesTests extends BasicTest {
 
-    @Test (priority = 1)
-    public void forbidsVisitsToHomeUrlIfNotAuthenticated () {
+    @Test(priority = 1)
+    public void forbidsVisitsToHomeUrlIfNotAuthenticated() {
 
         this.driver.get(baseUrl + "/home");
 
@@ -14,8 +14,8 @@ public class AuthRoutesTests extends BasicTest {
                 "[ERROR] The URL does not contain '/login'.");
     }
 
-    @Test (priority = 2)
-    public void  forbidsVisitsToProfileUrlIfNotAuthenticated () {
+    @Test(priority = 2)
+    public void forbidsVisitsToProfileUrlIfNotAuthenticated() {
 
         this.driver.get(baseUrl + "/profile");
 
@@ -24,8 +24,8 @@ public class AuthRoutesTests extends BasicTest {
 
     }
 
-    @Test (priority = 3)
-    public void forbidsVisitsToAdminCitiesUrlIfNotAuthenticated () {
+    @Test(priority = 3)
+    public void forbidsVisitsToAdminCitiesUrlIfNotAuthenticated() {
 
         this.driver.get(baseUrl + "/admin/cities");
 
@@ -34,8 +34,8 @@ public class AuthRoutesTests extends BasicTest {
 
     }
 
-    @Test (priority = 4)
-    public void forbidsVisitsToAdminUsersUrlIfNotAuthenticated () {
+    @Test(priority = 4)
+    public void forbidsVisitsToAdminUsersUrlIfNotAuthenticated() {
 
         this.driver.get(baseUrl + "/admin/users");
 

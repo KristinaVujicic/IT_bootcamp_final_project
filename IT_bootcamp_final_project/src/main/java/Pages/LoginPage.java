@@ -12,7 +12,7 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public WebElement getEmail () {
+    public WebElement getEmail() {
         return driver.findElement(By.id("email"));
     }
 
@@ -20,11 +20,9 @@ public class LoginPage {
         return driver.findElement(By.id("password"));
     }
 
-    public WebElement getLogInButtonOnLogInPage () {
+    public WebElement getLogInButtonOnLogInPage() {
         return driver.findElement(By.xpath("// button [contains (@type, 'submit')]"));
     }
-
-
 
 
 }

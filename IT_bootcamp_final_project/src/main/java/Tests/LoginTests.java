@@ -1,21 +1,17 @@
 package Tests;
 
-import Pages.LoginPage;
-import Pages.NavPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTests extends BasicTest {
 
     @Test(priority = 1)
-    public void visitsTheLoginPage() throws InterruptedException {
+    public void visitsTheLoginPage() {
 
         navPage.getChangeLanguageButton().click();
         navPage.getENGButtonFromDropdown().click();
         navPage.getLoginButton().click();
-        Thread.sleep(1000);
+
         Assert.assertTrue(driver.getCurrentUrl().contains("login"),
                 "[ERROR] Page url does not contain /login");
     }
@@ -79,7 +75,7 @@ public class LoginTests extends BasicTest {
     }
 
     @Test(priority = 5)
-    public void validLogin() throws InterruptedException {
+    public void validLogin() {
 
         navPage.getLoginButton().click();
 
@@ -91,10 +87,9 @@ public class LoginTests extends BasicTest {
 
         loginPage.getLogInButtonOnLogInPage().click();
 
-        Thread.sleep(1000);
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/home"),
-                "[ERROR] Page url does not contain /home");
+        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+                "[ERROR] Page url does not contain /login");
 
     }
 

@@ -12,11 +12,11 @@ public class CitiesPage {
 
     private WebDriver driver;
 
-    public CitiesPage (WebDriver driver) {
+    public CitiesPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public WebElement getNewItemButton () {
+    public WebElement getNewItemButton() {
         return driver.findElement(By.xpath("// button [contains (@class, 'btnNewItem ')]"));
     }
 
@@ -27,23 +27,23 @@ public class CitiesPage {
 
     }
 
-    public WebElement getNewItemInput(){
+    public WebElement getNewItemInput() {
         return driver.findElement(By.xpath("// input [@id= 'name']"));
     }
 
-    public WebElement getSaveButton () {
+    public WebElement getSaveButton() {
         return driver.findElement(By.xpath("//button[contains(@class, 'btnSave')]"));
     }
 
 
-    public void waitForSuccessPopUpToBeVisible(){
-       WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By
-               .xpath("//div[contains(text(),'Saved successfully')]")));
+    public void waitForSuccessPopUpToBeVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .xpath("//div[contains(text(),'Saved successfully')]")));
     }
 
-    public void waitForDeletePopUpToBeVisible(){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    public void waitForDeletePopUpToBeVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By
                 .xpath("//div[contains(text(),' Deleted successfully ')]")));
     }
@@ -52,52 +52,39 @@ public class CitiesPage {
         return driver.findElement(By.xpath("// div [contains (@class, 'success')]"));
     }
 
-    public WebElement getSearchInout () {
+    public WebElement getSearchInout() {
 
         return driver.findElement(By.id("search"));
     }
 
-    public void waitForNumbersOfRowsToBe (int rowIndex) {
+    public void waitForNumbersOfRowsToBe(int rowIndex) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("tr"), rowIndex +1 ));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("tr"), rowIndex + 1));
     }
 
-    public WebElement getTableCellFromRow (int rowIndex, int cellIndex){
+    public WebElement getTableCellFromRow(int rowIndex, int cellIndex) {
         return driver
                 .findElement(By.xpath("//table/tbody/tr[" + rowIndex + "]/td[" + cellIndex + "]"));
     }
 
-    public WebElement getEditButtonFromRow (int row){
+    public WebElement getEditButtonFromRow(int row) {
         return driver.findElement(By.xpath("//tbody/tr[" + row + "]/td/div/button[@id = 'edit']"));
     }
 
-    public WebElement getDeleteButtonFromRow (int row){
+    public WebElement getDeleteButtonFromRow(int row) {
         return driver.findElement(By.xpath("//tbody/tr[" + row + "]/td/div/button[@id = 'delete']"));
     }
 
-    public void waitForDeletePopUpToBeVisable(){
+    public void waitForDeletePopUpToBeVisable() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions
                 .visibilityOfElementLocated(
                         By.xpath("//*[text() = 'Do you really want to delete this item?']")));
     }
 
-    public WebElement getDeleteButtonInDeletePopUp(){
+    public WebElement getDeleteButtonInDeletePopUp() {
         return driver.findElement(By.xpath("//span[contains(text(), ' Delete')]"));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
